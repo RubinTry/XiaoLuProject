@@ -1,9 +1,16 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
 }
 
+apply from: '../sign.gradle'
+
 android {
+    Properties properties = new Properties()
+    InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
+    properties.load(inputStream)
+
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -18,9 +25,6 @@ android {
     }
 
     buildTypes {
-        Properties properties = new Properties()
-        InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
-        properties.load(inputStream)
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

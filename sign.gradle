@@ -1,0 +1,16 @@
+android{
+    signingConfigs {
+        release {
+            storeFile file('..\\XiaoLu.jks')
+            storePassword 'abc913430'
+            keyAlias 'XiaoLu'
+            keyPassword 'abc913430'
+        }
+        debug {
+            storeFile file('..\\XiaoLu.jks')
+            storePassword 'abc913430'
+            keyPassword 'abc913430'
+            keyAlias 'XiaoLu'
+        }
+    }
+}
